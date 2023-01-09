@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag shreeshesh327/php-app:$(date +%s)
+      run: docker build . --file Dockerfile --tag shreeshesh327/php-app
     
     - name: Publish the Docker image
       if: success()
@@ -29,6 +29,6 @@ jobs:
     - name: Push the Docker image
       if: success()
       run: |
-          docker push shreeshesh327/php-app:$(date +%s)
+          docker push shreeshesh327/php-app
           
 
